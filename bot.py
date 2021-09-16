@@ -4,6 +4,8 @@ from os
 
 bot = commands.Bot(command_prefix='m!', help_command=None,intents = discord.Intents.all())
 
+TOKEN = os.getenv("TOKEN")
+
 @bot.command()
 async def load(ctx, extension):
     bot.load_extension(f'cogs.{extension}')
@@ -18,4 +20,4 @@ for filename in os.listdir('cogs'):
 
 
     
-bot.run('ODg2NjM0NTA5MTU0NTI5Mjgw.YT4cuw.GDcUa3vmINEWuGsA3rmkTcappfA')
+bot.run(TOKEN)
