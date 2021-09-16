@@ -1,6 +1,6 @@
 import discord
 from discord.ext import tasks, commands
-import os import getenv
+from os import getenv
 
 
 bot = commands.Bot(command_prefix='m!', help_command=None,intents = discord.Intents.all())
