@@ -1,7 +1,6 @@
 import discord
 from discord.ext import tasks, commands
-from os import getenv
-
+from os 
 
 bot = commands.Bot(command_prefix='m!', help_command=None,intents = discord.Intents.all())
 
@@ -19,4 +18,4 @@ for filename in os.listdir('cogs'):
 
 
     
-bot.run(getenv('TOKEN'))
+bot.run('ODg2NjM0NTA5MTU0NTI5Mjgw.YT4cuw.GDcUa3vmINEWuGsA3rmkTcappfA')
