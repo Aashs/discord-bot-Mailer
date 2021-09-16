@@ -1,8 +1,7 @@
 import discord
 from discord.ext import tasks, commands
-import os
+import os import getenv
 
-TOKEN = os.getenv("TOKEN")
 
 bot = commands.Bot(command_prefix='m!', help_command=None,intents = discord.Intents.all())
 
