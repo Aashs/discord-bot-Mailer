@@ -96,7 +96,7 @@ pyquil==1.9.0
 python-dateutil==2.8.1
 python-jsonrpc-server==0.3.2
 python-language-server==0.31.10
-pyxel==1.0.1
+pyxel==1.4.3
 referenceqvm==0.3
 regex==2021.4.4
 replit==3.1.0
