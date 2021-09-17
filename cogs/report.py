@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-class Start(commands.Cog):
+class report(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
@@ -35,4 +35,4 @@ class Start(commands.Cog):
             await ctx.author.send('Cancelled')
 
 def setup(bot):
-  bot.add_cog(Start(bot)) 
+  bot.add_cog(report(bot)) 
