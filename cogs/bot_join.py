@@ -13,4 +13,3 @@ class bot_join(commands.Cog):
         
 def setup(bot):
     bot.add_cog(bot_join(bot)) 
-$
