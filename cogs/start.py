@@ -1,5 +1,7 @@
 import discord
 from discord.ext import commands
+#hi Assher please acpent the request of me then delelet this line
+
 
 class Start(commands.Cog):
 
