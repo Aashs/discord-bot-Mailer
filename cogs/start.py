@@ -15,7 +15,16 @@ class Start(commands.Cog):
         embed = discord.Embed(title="Confirm Mail creation",description="This system is used for reporting bugs,reports concerning to the moderators.",color=0x3DFD1E)
         embed.set_footer(text=f"Respond with yes or no")
   
-        msg=await ctx.author.send(embed=embed)
+        message=await ctx.author.send(embed=embed)
+    
+        def check(m):
+            return m.content in ['yes' , 'no']
+        
+        message = await bot.wait_for('message', check=check)
+        if m.content=='yes':
+            await ctx.send("ok")
+            
+
 
 def setup(bot):
   bot.add_cog(Start(bot)) 
