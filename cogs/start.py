@@ -22,6 +22,7 @@ class Start(commands.Cog):
         
         message = await self.bot.wait_for('message', check=check)
         content = ctx.content
+        content = content.lower()
         
         if content == 'yes':
             await ctx.author.send('Ticket created')
