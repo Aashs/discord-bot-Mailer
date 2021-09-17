@@ -15,19 +15,24 @@ class Start(commands.Cog):
     
     @commands.command()
     async def report(self,ctx):
-        if ctx.guild:await ctx.send("Works in DM only!!");print("USED IN A GUILD SO RETURNED!!");return
         embed = discord.Embed(title="Confirm Mail creation",description="This system is used for reporting bugs,reports concerning to the moderators.",color=0x3DFD1E)
         embed.set_footer(text=f"Respond with yes or no")
+        
         await ctx.author.send(embed=embed)
+        
         def check(msg):
             return msg.author == ctx.author
+        
         message = await self.bot.wait_for('message', check=check)
         content = message.content
+        
+        content.lower()
+        
         if content == 'yes':
             await ctx.author.send('Ticket created')
             await self.bot.owner.send(f"TIKET BY {ctx.author.mention}")
         if content == 'no':
-            await ctx.author.send('Cancelled');return
+            await ctx.author.send('Cancelled')
 
 def setup(bot):
   bot.add_cog(Start(bot)) 
