@@ -17,7 +17,7 @@ async def unload(ctx, extension):
     await ctx.send('Done')
   
 @bot.event
-async def on_ready(ctx):
+async def on_ready():
     print('Bot is ready!')
 
 for filename in os.listdir('cogs'):
