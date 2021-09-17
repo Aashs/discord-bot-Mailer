@@ -23,5 +23,4 @@ requests==2.26.0
 soupsieve==2.2.1
 typing-extensions==3.10.0.2
 urllib3==1.26.6
-wav-win-sound==1.0.7
 yarl==1.6.3
