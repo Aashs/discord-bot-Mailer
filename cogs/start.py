@@ -17,13 +17,17 @@ class Start(commands.Cog):
   
         message=await ctx.author.send(embed=embed)
     
-        def check(m):
-            return m.content in ['yes' , 'no']
+        def check(msg):
+            return msg.author == ctx.author
         
         message = await bot.wait_for('message', check=check)
-        if m.content=='yes':
-            await ctx.send("ok")
+        content = message.content
+        
+        if content == 'yes':
+            await ctx.send('Ticket created')
             
+        if content == 'no':
+            await ctx.send('Cancelled')
 
 
 def setup(bot):
