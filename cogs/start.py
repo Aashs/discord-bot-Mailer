@@ -21,15 +21,13 @@ class Start(commands.Cog):
             return ctx.author == ctx.author
         
         message = await self.bot.wait_for('message', check=check)
-        content = ctx.content
-        content = content.lower()
+        content = message.content
         
         if content == 'yes':
             await ctx.author.send('Ticket created')
             
         if content == 'no':
             await ctx.author.send('Cancelled')
-
 
 def setup(bot):
   bot.add_cog(Start(bot)) 
