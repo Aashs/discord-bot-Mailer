@@ -7,7 +7,7 @@ class bot_join(commands.Cog):
         self.bot = bot
     
     @commands.command()
-    async def test(self, ctx):
+    async def test(self,ctx):
         await ctx.send('brrr')
        
         
