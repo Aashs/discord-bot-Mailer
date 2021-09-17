@@ -11,6 +11,7 @@ class bot_join(commands.Cog):
         await guild.create_category('Mailer')
         print('test')
         
+        d
         
 def setup(bot):
     bot.add_cog(bot_join(bot)) 
