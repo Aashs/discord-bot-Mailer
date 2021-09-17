@@ -9,10 +9,12 @@ TOKEN = os.getenv('TOKEN')
 @bot.command()
 async def load(ctx, extension):
     bot.load_extension(f'cogs.{extension}')
+    await ctx.send('Done')
 
 @bot.command()
 async def unload(ctx, extension):
-    bot.unload_extension(f'cogs.{extension}')    
+    bot.unload_extension(f'cogs.{extension}')   
+    await ctx.send('Done')
 
 for filename in os.listdir('cogs'):
     if filename.endswith('.py'):
