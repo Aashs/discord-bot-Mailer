@@ -8,8 +8,8 @@ class bot_join(commands.Cog):
     
     @commands.Cog.listener()
     async def on_guild_join(self, guild):
-    await guild.create_text_channel("📯announcements-and-suggestions")
-    await guild.create_text_channel("💼log")
+        await guild.create_text_channel("📯announcements-and-suggestions")
+        await guild.create_text_channel("💼log")
        
         
 def setup(bot):
