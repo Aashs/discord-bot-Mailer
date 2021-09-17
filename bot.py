@@ -19,8 +19,6 @@ async def unload(ctx, extension):
 @bot.event
 async def on_ready(ctx):
     print('Bot is ready!')
-    logs_channel = bot.get_channel(888347399544799242)
-    await logs_channel.send('Bot is ready!')
 
 for filename in os.listdir('cogs'):
     if filename.endswith('.py'):
