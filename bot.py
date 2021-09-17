@@ -2,7 +2,7 @@ import discord
 from discord.ext import tasks, commands
 import os
 
-bot = commands.Bot(command_prefix='m!')
+bot = commands.Bot(command_prefix='m!',intents = discord.Intents.all())
 
 TOKEN = os.getenv('TOKEN')
 
