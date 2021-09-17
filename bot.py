@@ -4,7 +4,7 @@ import os
 
 bot = commands.Bot(command_prefix='m!')
 
-TOKEN = os.environ('TOKEN')
+TOKEN = os.getenv('TOKEN')
 
 @bot.command()
 async def load(ctx, extension):
