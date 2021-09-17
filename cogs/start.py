@@ -18,10 +18,10 @@ class Start(commands.Cog):
         message=await ctx.author.send(embed=embed)
     
         def check(msg):
-            return msg.author == ctx.author
+            return ctx.author == ctx.author
         
         message = await self.bot.wait_for('message', check=check)
-        content = message.content
+        content = ctx.content
         
         if content == 'yes':
             await ctx.send('Ticket created')
