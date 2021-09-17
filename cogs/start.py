@@ -24,10 +24,10 @@ class Start(commands.Cog):
         content = ctx.content
         
         if content == 'yes':
-            await ctx.send('Ticket created')
+            await ctx.author.send('Ticket created')
             
         if content == 'no':
-            await ctx.send('Cancelled')
+            await ctx.author.send('Cancelled')
 
 
 def setup(bot):
