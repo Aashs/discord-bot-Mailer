@@ -7,11 +7,11 @@ class bot_join(commands.Cog):
         self.bot = bot
     
     @commands.Cog.listener()
-    async def on_guild_join(self, guild)
+    async def on_guild_join(self)
         await guild.create_category('Mailer')
         print('test')
         
-        d
+       
         
 def setup(bot):
     bot.add_cog(bot_join(bot)) 
