@@ -13,6 +13,7 @@ class Start(commands.Cog):
         print(ctx.author) 
 
         embed = discord.Embed(title="Confirm Mail creation",description="This system is used for reporting bugs,reports concerning to the moderators.",color=0x3DFD1E)
+        embed.set_footer(text=f"Respond with yes or no")
   
         msg=await ctx.author.send(embed=embed)
 
