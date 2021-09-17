@@ -4,7 +4,7 @@ import os
 
 bot = commands.Bot(command_prefix='m!', help_command=None,intents = discord.Intents.all())
 
-TOKEN = os.getenv("TOKEN")
+TOKEN = os.environ("TOKEN")
 
 @bot.command()
 async def load(ctx, extension):
