@@ -20,7 +20,7 @@ class Start(commands.Cog):
         def check(msg):
             return msg.author == ctx.author
         
-        message = await bot.wait_for('message', check=check)
+        message = await self.bot.wait_for('message', check=check)
         content = message.content
         
         if content == 'yes':
