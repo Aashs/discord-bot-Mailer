@@ -10,6 +10,11 @@ class bot_join(commands.Cog):
     async def on_guild_join(self, guild):
         await guild.create_text_channel("📯announcements-and-suggestions")
         await guild.create_text_channel("💼log")
+        
+    
+    @commands.command()
+    async def latency(self, ctx):
+      await self.bot.ctx.send(bot.latency)
        
         
 def setup(bot):
