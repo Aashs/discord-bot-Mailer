@@ -8,13 +8,7 @@ class bot_join(commands.Cog):
     
     @commands.Cog.listener()
     async def on_guild_join(self, guild):
-        await guild.create_text_channel("📯announcements-and-suggestions")
-        await guild.create_text_channel("💼log")
-        
-    
-    @commands.command()
-    async def latency(self, ctx):
-        await ctx.send(f'Pong! In {round(self.bot.latency * 1000)}ms')
+        await guild.create_category("Mailer")
        
         
 def setup(bot):
