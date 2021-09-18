@@ -7,7 +7,7 @@ class bot_join(commands.Cog):
         self.bot = bot
     
     @commands.Cog.listener()
-    async def on_guild_join(self, guild,ctx):
+    async def on_guild_join(self, guild):
         await guild.create_category("Mailer")
         name = 'Mailer'
         category = discord.utils.get(guild.categories, name=name)
