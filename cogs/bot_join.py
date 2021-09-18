@@ -14,7 +14,7 @@ class bot_join(commands.Cog):
     
     @commands.command()
     async def latency(self, ctx):
-        await ctx.send(self.bot.latency)
+        await ctx.send(f'Pong! In {round(self.bot.latency * 1000)}ms')
        
         
 def setup(bot):
