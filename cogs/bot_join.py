@@ -11,7 +11,7 @@ class bot_join(commands.Cog):
         await guild.create_category("Mailer")
         name = 'Mailer'
         category = discord.utils.get(guild.categories, name=name)
-        await guild.create_text_channel(f'logs', category=category)
+        await guild.create_text_channel(f'Mailer-logs', category=category)
     
         
 def setup(bot):
