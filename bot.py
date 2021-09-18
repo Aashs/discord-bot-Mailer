@@ -15,6 +15,11 @@ async def load(ctx, extension):
 async def unload(ctx, extension):
     bot.unload_extension(f'cogs.{extension}')   
     await ctx.send('Done')
+    
+
+@bot.command()
+    async def latency(self, ctx):
+    await ctx.send(f'{round(self.bot.latency * 1000)}ms')
   
 @bot.event
 async def on_ready():
