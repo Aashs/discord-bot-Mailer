@@ -18,7 +18,7 @@ async def unload(ctx, extension):
     
 
 @bot.command()
-    async def latency(self, ctx):
+async def latency(ctx):
     await ctx.send(f'{round(self.bot.latency * 1000)}ms')
   
 @bot.event
