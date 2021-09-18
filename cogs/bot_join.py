@@ -14,7 +14,7 @@ class bot_join(commands.Cog):
     
     @commands.command()
     async def latency(self, ctx):
-      await self.bot.ctx.send(bot.latency)
+      await ctx.send(bot.latency)
        
         
 def setup(bot):
