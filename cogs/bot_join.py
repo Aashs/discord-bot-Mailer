@@ -9,6 +9,11 @@ class bot_join(commands.Cog):
     @commands.Cog.listener()
     async def on_guild_join(self, guild):
         await guild.create_category("Mailer")
+        name = 'Mailer'
+        category = discord.utils.get(ctx.guild.categories, name=name)
+
+        await ctx.guild.create_text_channel(f'logs', category=category)
+
        
         
 def setup(bot):
