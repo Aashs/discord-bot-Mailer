@@ -2,6 +2,8 @@ import discord
 from discord.ext import tasks, commands
 import os
 
+#tesst
+
 bot = commands.Bot(command_prefix='-',intents = discord.Intents.all())
 
 TOKEN = os.getenv('TOKEN')
