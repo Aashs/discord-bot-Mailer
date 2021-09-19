@@ -11,7 +11,7 @@ class report(commands.Cog):
       if not ctx.guild and not ctx.author.bot:
         print(ctx.content)  
         print(ctx.author) 
-        if ctx.content == '-report':
+        for ctx.content in ['-report','yes','no']:
             pass
         else:
             await ctx.author.send('-report to create ticket')
@@ -34,7 +34,6 @@ class report(commands.Cog):
         
         if content == 'yes':
             await ctx.author.send('Ticket created')
-            await self.bot.owner.send(f"TIKET BY {ctx.author.mention}")
         if content == 'no':
             await ctx.author.send('Cancelled')
 
