@@ -11,11 +11,6 @@ class report(commands.Cog):
       if not ctx.guild and not ctx.author.bot:
         print(ctx.content)  
         print(ctx.author) 
-        pass_list=['-report','yes','no']
-        for ctx.content in pass_list
-            pass
-        else:
-            await ctx.author.send('-report to create ticket')
 
     
     @commands.command()
