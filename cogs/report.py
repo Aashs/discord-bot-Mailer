@@ -11,7 +11,10 @@ class report(commands.Cog):
       if not ctx.guild and not ctx.author.bot:
         print(ctx.content)  
         print(ctx.author) 
-        await ctx.author.send('-report to initiate report ticket')
+        if ctx.content== '-report':
+            pass
+        else:
+            await ctx.author.send('-report to create ticket')
 
     
     @commands.command()
