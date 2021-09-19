@@ -11,11 +11,12 @@ class report(commands.Cog):
       if not ctx.guild and not ctx.author.bot:
         print(ctx.content)  
         print(ctx.author) 
+        await ctx.author.send('-report to initiate report ticket')
 
     
     @commands.command()
     async def report(self,ctx):
-        embed = discord.Embed(title="Confirm Mail creation",description="This system is used for reporting bugs,reports concerning to the moderators.",color=0x3DFD1E)
+        embed = discord.Embed(title="Confirm Mail creation",description="This system is used for reports concerning to the moderators.",color=0x3DFD1E)
         embed.set_footer(text=f"Respond with yes or no")
         
         await ctx.author.send(embed=embed)
