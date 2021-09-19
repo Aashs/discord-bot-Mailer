@@ -8,7 +8,7 @@ class bot_join(commands.Cog):
     
     @commands.command()
     async def setup(self, ctx):
-        embed = discord.Embed(title="Setup",description="Created a private channel called #mailer-logs, use ```-accessrole[roles]``` give staff access to the channel.",color=0x1793FC)
+        embed = discord.Embed(title="Setup",description="Created a private channel called #mailer-logs in Mailer category, use ```-accessrole[roles]``` give staff access to the channel.",color=0x1793FC)
     
     
         
