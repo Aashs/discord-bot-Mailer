@@ -11,7 +11,7 @@ class bot_join(commands.Cog):
         all_channels = []
         for guild in self.bot.guilds:
             for channel in guild.text_channels:
-                all_channels.append(channel)
+                all_channels.append(channel.id)
                 print(all_channels)
         
         x = await ctx.guild.create_category('Mailer')
