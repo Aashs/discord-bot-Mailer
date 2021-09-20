@@ -29,7 +29,6 @@ class bot_join(commands.Cog):
         else:
             print("Nothing exists. We're doomed.")
     
-    #d
         
 def setup(bot):
     bot.add_cog(bot_join(bot)) 
