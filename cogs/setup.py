@@ -21,6 +21,7 @@ class bot_join(commands.Cog):
         for y.id in all_channels:
             print('ye ma boi correct')
             break
+      
     
     
         
