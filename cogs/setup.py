@@ -9,7 +9,7 @@ class bot_join(commands.Cog):
     @commands.command()
     async def setup(self, ctx):
         all_channels = []
-        for guild in bot.guilds:
+        for guild in self.bot.guilds:
             for channel in guild.text_channels:
                 all_channels.append(channel)
                 print(all_channels)
