@@ -7,7 +7,7 @@ class bot_join(commands.Cog):
         self.bot = bot
     
     @commands.command()
-    async def adminlogs2(self, ctx):
+    async def setup(self, ctx):
         all_channels = []
         for channel in ctx.guild.text_channels:
                 all_channels.append(channel.id)
