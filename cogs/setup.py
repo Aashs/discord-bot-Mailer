@@ -7,22 +7,27 @@ class bot_join(commands.Cog):
         self.bot = bot
     
     @commands.command()
-    async def setup(self, ctx):
+    async def adminlogs2(self, ctx):
         all_channels = []
-        for guild in self.bot.guilds:
-            for channel in guild.text_channels:
+        for channel in ctx.guild.text_channels:
                 all_channels.append(channel.id)
-                    
- 
-        x = await ctx.guild.create_category('Mailer')
-        y = await ctx.guild.create_text_channel('Mailer-logs',category=x)
-        embed = discord.Embed(title="Setup",description=f"Created a private channel {y.mention}, use ``-accessrole[roles]`` give staff access to the channel.",color=0x1793FC)
-        await ctx.send(embed=embed)
+             
+        
+        for i in all_channels:
+            channel = self.client.get_channel(i)
+            category_exists = False
+            channel_exists = False
+            if channel.name == 'Mailer-logs':
+                channel_exists = True
+            if category_exists == 'Mailer':
+                category_exists = True
 
-
-        for y.id in all_channels:
-            print('correct')
-            break   
+        if category_exists and channel_exists:
+            print("Category and channel exists")
+        elif category_exists and channel_exists == False:
+            print("Category exists but channel does not")
+        else:
+            print("Nothing exists. We're doomed.")
     
     
         
