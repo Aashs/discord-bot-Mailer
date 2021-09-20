@@ -8,9 +8,9 @@ class bot_join(commands.Cog):
     
     @commands.command()
     async def setup(self, ctx):
-        a = await ctx.guild.create_category('Mailer')
-        await ctx.guild.create_text_channel('Mailer-logs',category=a)
-        embed = discord.Embed(title="Setup",description="Created a private channel called in Mailer category, use ``-accessrole[roles]`` give staff access to the channel.",color=0x1793FC)
+        x = await ctx.guild.create_category('Mailer')
+        y = await ctx.guild.create_text_channel('Mailer-logs',category=x)
+        embed = discord.Embed(title="Setup",description=f"Created a private channel {y.mention}, use ``-accessrole[roles]`` give staff access to the channel.",color=0x1793FC)
         await ctx.send(embed=embed)
     
     
