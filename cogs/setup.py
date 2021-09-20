@@ -16,7 +16,7 @@ class bot_join(commands.Cog):
          for y.id in all_channels:
             if True:
                 print('ye ma boi correct')
-                break        
+                   
         
             x = await ctx.guild.create_category('Mailer')
             y = await ctx.guild.create_text_channel('Mailer-logs',category=x)
