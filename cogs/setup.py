@@ -22,7 +22,7 @@ class bot_join(commands.Cog):
             if channel.name == 'mailer-logs':
                 channel_exists = True
         for i in all_categories:
-            if i.name == 'mailer':
+            if i.name == 'Mailer':
                 category_exists = True
 
         if category_exists == True and channel_exists == True:
