@@ -32,7 +32,7 @@ class bot_join(commands.Cog):
             x = await ctx.guild.create_category('Mailer')
             y = await ctx.guild.create_text_channel('mailer-logs',category=x)
 
-            embed = discord.Embed(title="Setup",description=f"Created a private channel {i.mention}, use ``-accessrole[roles]`` give staff access to the channel.",color=0x1793FC)
+            embed = discord.Embed(title="Setup",description=f"Bot has been setted up!, use ``-accessrole[roles]``to give staff access to the channel.Check out more information and configurations with ``-help``.",color=0x1793FC)
             await ctx.send(embed=embed)
     
         
