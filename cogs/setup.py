@@ -21,8 +21,8 @@ class bot_join(commands.Cog):
         await ctx.send(embed=embed)
         
         for y.id in all_channels:
-            if True:
-                print('ye ma boi correct')
+            print('ye ma boi correct')
+            break
         
 
     
