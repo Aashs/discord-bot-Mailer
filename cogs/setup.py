@@ -14,7 +14,7 @@ class bot_join(commands.Cog):
              
         
         for i in all_channels:
-            channel = self.client.get_channel(i)
+            channel = self.bot.get_channel(i)
             category_exists = False
             channel_exists = False
             if channel.name == 'Mailer-logs':
