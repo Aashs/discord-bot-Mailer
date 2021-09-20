@@ -26,10 +26,13 @@ class bot_join(commands.Cog):
                 category_exists = True
 
         if category_exists == True and channel_exists == True:
-            embed = discord.Embed(title="Setup",description=f"Created a private channel {i.mention}, use ``-accessrole[roles]`` give staff access to the channel.",color=0x1793FC)
+            embed = discord.Embed(description=f"Bot is already setted up",color=0xFF0000)
             await ctx.send(embed=embed)
         else:
-            embed = discord.Embed(description=f"Bot is already setted up",color=0xFF0000)
+            x = await ctx.guild.create_category('Mailer')
+            y = await ctx.guild.create_text_channel('mailer-logs',category=x)
+
+            embed = discord.Embed(title="Setup",description=f"Created a private channel {i.mention}, use ``-accessrole[roles]`` give staff access to the channel.",color=0x1793FC)
             await ctx.send(embed=embed)
     
         
