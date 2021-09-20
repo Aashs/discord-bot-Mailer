@@ -7,7 +7,7 @@ class bot_join(commands.Cog):
         self.bot = bot
     
     @commands.command()
-    async def adminlogs2(self, ctx):
+    async def setup(self, ctx):
         all_channels = []
         all_categories = []
         for category in ctx.guild.categories:
@@ -18,7 +18,7 @@ class bot_join(commands.Cog):
         category_exists = False
         channel_exists = False
         for i in all_channels:
-            channel = self.client.get_channel(i)
+            channel = self.bot.get_channel(i)
             if channel.name == 'mailer-logs':
                 channel_exists = True
         for i in all_categories:
