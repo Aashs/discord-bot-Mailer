@@ -42,7 +42,7 @@ class bot_join(commands.Cog):
         file = open("setup_data.json")
         json.load(file)
         data={
-            "role"= arg
+            "role"= 1
             }
         json.dump(file,data)
         
