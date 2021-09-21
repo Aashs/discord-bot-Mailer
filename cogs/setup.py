@@ -40,7 +40,7 @@ class bot_join(commands.Cog):
     @commands.command()
     async def access(self,ctx,arg): 
         file = open("setup_data.json")
-        json.load(arg)
+        json.load(file)
         
 def setup(bot):
     bot.add_cog(bot_join(bot)) 
