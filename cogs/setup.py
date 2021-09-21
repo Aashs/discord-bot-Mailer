@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+import json
 
 class bot_join(commands.Cog):
 
@@ -35,6 +36,11 @@ class bot_join(commands.Cog):
             embed = discord.Embed(title="Setup",description=f"Bot has been setted up!, use ``-accessrole[roles]``to give staff access to the channel.Check out more information and configurations with ``-help``.",color=0x1793FC)
             await ctx.send(embed=embed)
     
+
+    @commands.command()
+    async def access(self,ctx,arg): 
+        file = open("setup_data.json")
+        json.load(arg)
         
 def setup(bot):
     bot.add_cog(bot_join(bot)) 
