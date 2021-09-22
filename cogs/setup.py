@@ -39,12 +39,12 @@ class bot_join(commands.Cog):
 
     @commands.command()
     async def access(self,ctx,arg): 
-        file = open("setup_data.json")
-        json.load(file)
-        data={
-            "role"= 1
-            }
-        json.dump(file,data)
+        with open("setup_data.json",r) as file:
+            data0 = json.load(file)
+        data0['roles']=1
+        with open(main_bank,'w') as f:
+            json.dump(data0,f,indent=4)
+        
         
 def setup(bot):
     bot.add_cog(bot_join(bot)) 
