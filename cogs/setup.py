@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import json
 
-class bot_join(commands.Cog):
+class setup(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
@@ -39,12 +39,12 @@ class bot_join(commands.Cog):
 
     @commands.command()
     async def access(self,ctx,arg): 
-        open("DataBase/setup_data.json", "r") as file:
+        with open("DataBase/setup_data.json", "r") as file:
             data0 = json.load(file)
         data0[arg]=1
-        open("DataBase/setup_data.json", "w") as f:
+        with open("DataBase/setup_data.json", "w") as f:
             json.dump(data0,f,indent=4)
         
         
 def setup(bot):
-    bot.add_cog(bot_join(bot)) 
+    bot.add_cog(setup(bot)) 
