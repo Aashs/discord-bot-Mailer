@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import json
 
-class setup(commands.Cog):
+class server_setup(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
@@ -11,6 +11,7 @@ class setup(commands.Cog):
     async def setup(self, ctx):
         all_channels = []
         all_categories = []
+
         for category in ctx.guild.categories:
             all_categories.append(category)
         for channel in ctx.guild.text_channels:
@@ -22,6 +23,7 @@ class setup(commands.Cog):
             channel = self.bot.get_channel(i)
             if channel.name == 'mailer-logs':
                 channel_exists = True
+
         for i in all_categories:
             if i.name == 'Mailer':
                 category_exists = True
@@ -47,4 +49,4 @@ class setup(commands.Cog):
         
         
 def setup(bot):
-    bot.add_cog(setup(bot)) 
+    bot.add_cog(server_setup(bot)) 
