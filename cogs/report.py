@@ -26,7 +26,7 @@ class report(commands.Cog):
         message = await self.bot.wait_for('message', check=check)
         content = message.content
         
-        content.lower()
+        content = content.lower()
         
         if content == 'yes':
             await ctx.author.send('Ticket created')
