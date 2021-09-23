@@ -40,10 +40,10 @@ class server_setup(commands.Cog):
     
 
     @commands.command()
-    async def access(self,ctx): 
+    async def access(self,ctx,arg): 
         with open("DataBase/setup_data.json", "r") as file:
             data0 = json.load(file)
-        data0='jjj'
+        data0[arg]=1
         with open("DataBase/setup_data.json", "w") as f:
             json.dump(data0,f,indent=4)
         
