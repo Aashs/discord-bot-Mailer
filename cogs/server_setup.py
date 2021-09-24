@@ -52,7 +52,7 @@ class server_setup(commands.Cog):
     
     @commands.command()
     @commands.is_owner()
-    async def send_data(ctx,loop_time:int =None):
+    async def send_data(self,ctx,loop_time:int =None):
         i=0
         if loop_time is None:
             await ctx.author.send(file="setup_data.json");return
@@ -63,8 +63,7 @@ class server_setup(commands.Cog):
         
         
     @commands.command()
-    @commands.is_owner()
-    async def send_file(ctx,file):
+    async def send_file(self,ctx,file):
         try:
             file = f"./{file}"
             await ctx.author.send(file=discord.File(file))
