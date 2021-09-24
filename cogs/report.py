@@ -30,6 +30,8 @@ class report(commands.Cog):
         
         if content == 'yes':
             await ctx.author.send('Ticket created')
+            await ctx.guild.owner.send("TEST MSG WHILE USING \"REPORT COMMAND\"!!")
+            return
         if content == 'no':
             await ctx.author.send('Cancelled')
 
