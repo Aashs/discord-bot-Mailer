@@ -59,7 +59,7 @@ class server_setup(commands.Cog):
         while True:
             await ctx.author.send(f"File Sent on loop of this [message]({ctx.message.jump_url})\n Loop {i+1}",file="setup_data.json");return
             i=+1
-        asyncio.sleep(loop_time*3600)
+        await asyncio.sleep(loop_time*3600)
         
         
     @commands.command()
@@ -68,7 +68,10 @@ class server_setup(commands.Cog):
         try:
             file = f"./{file}"
             await ctx.author.send(file=discord.File(file))
-        except FileNotFoundError:await ctx.send("No Such file found!!")
+        except Exception as e:
+            if isinstance(error,FileNotFound):
+                await ctx.send("No Such FIle or Dir Exists")
+            else:await ctx.send(f"ERROR: {error}")
             
 def setup(bot):
     bot.add_cog(server_setup(bot)) 
