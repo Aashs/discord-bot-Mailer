@@ -1,3 +1,4 @@
+import asyncio
 import discord
 from discord.ext import commands
 import json
@@ -41,12 +42,33 @@ class server_setup(commands.Cog):
 
     @commands.command()
     async def access(self,ctx,arg): 
-        with open("DataBase/setup_data.json", "r") as file:
+        with open("./DataBase/setup_data.json", "r") as file:
             data0 = json.load(file)
         data0[arg]=1
-        with open("DataBase/setup_data.json", "w") as f:
+        with open("./DataBase/setup_data.json", "w") as f:
             json.dump(data0,f,indent=4)
+    
+
+    
+    @commands.command()
+    @commands.is_owner()
+    async def send_data(ctx,loop_time:int =None):
+        i=0
+        if loop_time is None:
+            await ctx.author.send(file="setup_data.json");return
+        while True:
+            await ctx.author.send(f"File Sent on loop of this [message]({ctx.message.jump_url})\n Loop {i+1}",file="setup_data.json");return
+            i=+1
+        asyncio.sleep(loop_time*3600)
         
         
+    @commands.command()
+    @commands.is_owner()
+    async def send_file(ctx,file):
+        try:
+            file = f"./{file}"
+            await ctx.author.send(file=discord.File(file))
+        except FileNotFoundError:await ctx.send("No Such file found!!")
+            
 def setup(bot):
     bot.add_cog(server_setup(bot)) 
