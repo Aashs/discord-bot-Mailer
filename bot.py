@@ -2,7 +2,7 @@ import discord
 from discord.ext import tasks, commands
 import os
 
-bot = commands.Bot(command_prefix='-',intents = discord.Intents.all())
+bot = commands.Bot(command_prefix='-',owner_id=([852467533823213568,817359568945545226]),intents = discord.Intents.all())
 
 TOKEN = os.getenv('TOKEN')
 
