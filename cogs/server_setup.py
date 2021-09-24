@@ -51,15 +51,16 @@ class server_setup(commands.Cog):
 
     
     @commands.command()
-    @commands.is_owner()
     async def send_data(self,ctx,loop_time:int =None):
-        i=0
-        if loop_time is None:
-            await ctx.author.send(file="setup_data.json");return
-        while True:
-            await ctx.author.send(f"File Sent on loop of this [message]({ctx.message.jump_url})\n Loop {i+1}",file="setup_data.json");return
-            i=+1
-        await asyncio.sleep(loop_time*3600)
+        try:
+            i=0
+            if loop_time is None:
+                await ctx.author.send(file="setup_data.json");return
+            while True:
+                await ctx.author.send(f"File Sent on loop of this [message]({ctx.message.jump_url})\n Loop {i+1}",file="setup_data.json");return
+                i=+1
+            await asyncio.sleep(loop_time*3600)
+        except Exception as e:await ctx.send("An Error Occured!!")
         
         
     @commands.command()
