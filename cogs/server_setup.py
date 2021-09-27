@@ -51,10 +51,10 @@ class server_setup(commands.Cog):
 
 
     @commands.command()
-    async def access(self,ctx,arg): 
+    async def access(self,ctx,*,role:discord.Role): 
         with open("./DataBase/setup_data.json", "r") as file:
             data0 = json.load(file)
-        data0[arg]=1
+        data0[ctx.guild.id]=role.split(" ")
         with open("./DataBase/setup_data.json", "w") as f:
             json.dump(data0,f,indent=4)
     
