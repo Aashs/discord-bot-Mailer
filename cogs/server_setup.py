@@ -32,18 +32,9 @@ class server_setup(commands.Cog):
         if category_exists == True and channel_exists == True:
             embed = discord.Embed(description=f"Bot is already setted up",color=0xFF0000)
             await ctx.send(embed=embed)
-        elif category_exists == True and channel_exists == False:
-            print("Category exists but channel does not")
-            await ctx.guild.category_exists.delete()
-            x = await ctx.guild.create_category('Mailer')
-            y = await ctx.guild.create_text_channel('mailer-logs',category=x)
-            embed = discord.Embed(title="Setup",description=f"Bot has been setted up!, use ``-accessrole[roles]``to give staff access to the channel.Check out more information and configurations with ``-help``.",color=0x1793FC)
-            await ctx.send(embed=embed) 
-        elif category_exists == False and channel_exists == True:
-            print("Category doesn't exist but channel does exist")
         else:
-            a = await ctx.guild.create_category('Mailer')
-            await ctx.guild.create_text_channel('mailer-logs',category=a)
+            x = await ctx.guild.create_category('Mailer')
+            await ctx.guild.create_text_channel('mailer-logs',category=x)
 
             embed = discord.Embed(title="Setup",description=f"Bot has been setted up!, use ``-accessrole[roles]``to give staff access to the channel.Check out more information and configurations with ``-help``.",color=0x1793FC)
             await ctx.send(embed=embed) 
