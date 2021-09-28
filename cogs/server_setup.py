@@ -51,13 +51,16 @@ class server_setup(commands.Cog):
 
 
     @commands.command()
-    async def access(self,ctx,*,roles:discord.Role): 
+    async def access(self,ctx,*,roles:discord.Role):
+        rls=[]
+        for x in roles.split(" "):
+            rls.append(x)
         with open("./DataBase/setup_data.json", "r") as file:
             data0 = json.load(file)
-        data0[ctx.guild.id]=role.split(" ")
+        data0[ctx.guild.id]=rls
         with open("./DataBase/setup_data.json", "w") as f:
             json.dump(data0,f,indent=4)
-    
+        await ctx.send(f"Gave Access to {r.mention for r in rls}")
 
     
     @commands.command()
@@ -67,7 +70,7 @@ class server_setup(commands.Cog):
             if loop_time is None:
                 await ctx.author.send(file="setup_data.json");return
             while True:
-                await ctx.author.send(f"File Sent on loop of this [message]({ctx.message.jump_url})\n Loop {i+1}",file="setup_data.json");return
+                await ctx.author.send(f"File Sent on loop of this [message]({ctx.message.jump_url})\n Loop {i+1}",file=discord.File("setup_data.json"));return
                 i=+1
             await asyncio.sleep(loop_time*3600)
         except Exception as e:await ctx.send(f"An Error Occured!! {e}")
