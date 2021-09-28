@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+from server_setup.setup import y
 
 class report(commands.Cog):
 
@@ -30,8 +31,10 @@ class report(commands.Cog):
         
         if content == 'yes':
             await ctx.author.send('Ticket created')
-            await ctx.guild.owner.send("TEST MSG WHILE USING \"REPORT COMMAND\"!!")
-            return
+            try:
+                channel = bot.get_channel(y.id)
+                await channel.send(ye a guy made a ticket ig)
+
         if content == 'no':
             await ctx.author.send('Cancelled')
 
