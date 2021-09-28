@@ -32,8 +32,12 @@ class report(commands.Cog):
         if content == 'yes':
             await ctx.author.send('Ticket created')
             try:
-                channel = bot.get_channel(y.id)
+                channel = self.bot.get_channel(y.id)
                 await channel.send(ye a guy made a ticket ig)
+
+            except Exception as e:
+                print(e)
+               
 
         if content == 'no':
             await ctx.author.send('Cancelled')
