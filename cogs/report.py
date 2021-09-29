@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from server_setup import logs_channel
+from cogs import server_setup
 
 class report(commands.Cog):
 
