@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from server_setup import *
+from cogs.server_setup import *
 
 class report(commands.Cog):
 
