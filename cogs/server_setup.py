@@ -34,8 +34,7 @@ class server_setup(commands.Cog):
             await ctx.send(embed=embed)
         else:
             category = await ctx.guild.create_category('Mailer')
-            global logs_channel
-            logs_channel = await ctx.guild.create_text_channel('mailer-logs',category=category)
+            self.bot.logs_channel = await ctx.guild.create_text_channel('mailer-logs',category=category)
 
             embed = discord.Embed(title="Setup",description=f"Bot has been setted up!, use ``-accessrole[roles]``to give staff access to the channel.Check out more information and configurations with ``-help``.",color=0x1793FC)
             await ctx.send(embed=embed) 
