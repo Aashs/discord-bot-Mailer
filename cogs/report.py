@@ -32,7 +32,7 @@ class report(commands.Cog):
         if content == 'yes':
             await ctx.author.send('Ticket created')
             try:
-                channel = self.bot.get_channel(logs_channel.id)
+                channel = self.bot.get_channel(ctx.self.bot.logs_channel.id)
                 await channel.send('ye a guy made a ticket ig')
 
             except Exception as e:
