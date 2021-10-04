@@ -15,4 +15,4 @@ This bot is free for everyone and always will be. If you like this project and w
 
 ## How does it work?
 
-When a member sends a direct message to the bot, Modmail will create a channel or "thread" into a designated category. All further DM messages will automatically relay to that channel; any available staff can respond within the channel.
+When a member sends a direct message to the bot, Modmail will create a channel or "thread" into a designated category. All further DM messages will automatically relay to that channel; any available staff can respond within the *channel.*
