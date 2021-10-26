@@ -9,7 +9,7 @@ class report(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, ctx):
-      if not ctx.guild and not ctx.author.bot:
+      if not ctx.guild and not ctx.author.bot:#TEST
           await ctx.author.send('``-report`` to initiate ticketing')
 
 
